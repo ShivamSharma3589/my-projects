@@ -19,64 +19,83 @@ img {
       border-radius: 6px;
 }
 
+@keyframes colorfulAnimation {
+      0%, 100% {
+            box-shadow: 0px 0px 10px aqua;
+            text-shadow: 0px 0px 10px aqua;
+      }
+      50% {
+            box-shadow: 0px 0px 10px rgb(162, 0, 255);
+            text-shadow: 0px 0px 10px rgb(162, 0, 255);
+      }
+}
+
+@keyframes backgroundColorAnimation{
+      0%, 100% {
+            background-color: aqua;
+      }
+      50% {
+            background-color: rgb(162, 0, 255);
+      }
+}
+
 /* click event animation starts here  */
 
-#top-animation,#right-animation,#bottom-animation,#left-animation{
-      padding: 2px ;
-      background-color: #d72631;
+#top-animation, #right-animation, #bottom-animation, #left-animation {
+      padding: 3px;
       position: fixed;
-      /* width: 100%; */
       z-index: 2;
       overflow: hidden;
       display: none;
 }
 
-#top-animation{
+#top-animation {
       top: 0;
       left: 0;
-      animation: onClickAnimation1  1s ease-in-out ;
+      animation: onClickAnimation1 1s ease-in-out;
 }
 
-#right-animation{
+#right-animation {
       top: 0;
       right: 0;
       width: 0;
       height: 0vh;
-      background-color:  #a2d5c6;
-      animation: onClickAnimation2 1s ease-in-out ;
+      animation: onClickAnimation2 1s ease-in-out;
 }
 
-#bottom-animation{
+#bottom-animation {
       bottom: 0;
       right: 0;
-      background-color: #5c3c92;
-      animation: onClickAnimation1 1s ease-in-out ;
+      animation: onClickAnimation1 1s ease-in-out;
 }
 
-#left-animation{
+#left-animation {
       width: 0;
       height: 0vh;
       left: 0;
       bottom: 0;
-      background-color: #077b8a;
-      animation: onClickAnimation2 1s ease-in-out ;
+      animation: onClickAnimation2 1s ease-in-out;
 }
 
-@keyframes onClickAnimation1{
-      0%,100%{
+@keyframes onClickAnimation1 {
+      0%, 100% {
+            background-color: aqua;
             width: 0%;
       }
-      50%{
+      50% {
+            background-color: rgb(162, 0, 255);
             width: 100%;
       }
 }
 
-@keyframes onClickAnimation2{
-      0%,100%{ 
+@keyframes onClickAnimation2 {
+      0%, 100% {
+            background-color: aqua;
             height: 0vh;
       }
-      50%{
+      50% {
             height: 100vh;
+            background-color: rgb(162, 0, 255);
       }
 }
 
@@ -185,7 +204,7 @@ nav {
       width: 16vw;
 }
 
-#home-section h2{
+#home-section h2 {
       padding: 0 0 1rem;
       font-size: 1.65rem;
       font-family: monospace;
@@ -193,7 +212,7 @@ nav {
       opacity: .8;
 }
 
-#about-text{
+#about-text {
       line-height: 2rem;
 }
 
@@ -234,15 +253,14 @@ article h2 {
       transition: all .2s ease-in-out;
 }
 
-.main-title:hover{
+.main-title:hover {
       border-radius: 10px;
-      box-shadow: 0px 0px 10px aqua;
-      text-shadow: 0px 0px 10px aqua;
+      animation: colorfulAnimation 2s ease-in-out infinite;
       transform: scale(1.005);
 }
 
-.main-title:hover .plus-container{
-      background-color: aqua;
+.main-title:hover .plus-container {
+      animation: colorfulAnimation 2s ease-in-out infinite, backgroundColorAnimation 2s ease-in-out infinite;
 }
 
 .plus-container {
@@ -267,7 +285,7 @@ article h2 {
       border-radius: 10px;
 }
 
-.plus-down{
+.plus-down {
       transition: all 2s ease-in-out;
       transform: translate(-50%, -50%) rotate(90deg);
 }
@@ -285,21 +303,20 @@ article h2 {
       scrollbar-color: black;
 }
 
-.project-container  a {
+.project-container a {
       width: 30%;
       font-size: 1.62rem;
       cursor: pointer;
       color: white;
       text-decoration: none;
-      /* padding: 1rem; */
       border-radius: 10px;
       margin: 2rem 0;
 }
 
-.project-container > a:hover {
+.project-container>a:hover {
       transform: scale(1.04);
-      /* border: 1px solid rgba(255,255,255,0.3); */
       box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+      animation: colorfulAnimation 1s ease-in-out infinite;
 }
 
 .project-image {
@@ -317,4 +334,18 @@ article h2 {
 
 footer {
       padding: 4rem;
+}
+
+#social-links{
+      border: 1px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+#social-links a{
+      color: white;
+      border: 1px solid white;
+      margin: 1rem;
+      font-size: 1.2rem;
 }
