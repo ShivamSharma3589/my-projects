@@ -127,13 +127,21 @@ function clickAnimation() {
       }
 }
 
+
+// animation function for bars 
+function animatedBars() {
+      div[0].classList.toggle('position-bars');
+      div[1].classList.toggle('position-bars');
+      div[2].classList.toggle('position-bars3');
+}
+
 // for home option in navbar 
 navLinks[0].addEventListener('click', () => {
       clickAnimation();
       if (media.matches) {
+            // animatedBars();
             navoptions.style.display = 'none';
             body.style.overflow = 'scroll';
-            animatedBars();
       }
 });
 
@@ -151,7 +159,7 @@ for (let i = 0; i < projectContainerLength; i++) {
             if (media.matches) {
                   navoptions.style.display = 'none';
                   body.style.overflow = 'scroll';
-                  animatedBars();
+                  // animatedBars();
             }
       });
       
@@ -201,16 +209,18 @@ for (let i = 0; i < 2; i++) {
 
 // javascript for phones
 
-// animation function for bars 
-function animatedBars() {
-      div[0].classList.toggle('position-bars');
-      div[1].classList.toggle('position-bars');
-      div[2].classList.toggle('position-bars3');
-}
+// for nav options to get close when click anywhere on the screen 
+navoptions.addEventListener('click', ()=>{
+      animatedBars();
+      if (media.matches) {
+            navoptions.style.display = 'none';
+            body.style.overflow = 'scroll';
+      }
+})
+
 
 // bar button function 
 bars.addEventListener('click', () => {
-      
       animatedBars();
       if (navoptions.style.display == 'none') {
             navoptions.style.display = 'flex';
