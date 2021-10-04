@@ -19,68 +19,88 @@ img {
       border-radius: 6px;
 }
 
+@keyframes colorfulAnimation {
+      0%, 100% {
+            box-shadow: 0px 0px 10px aqua;
+            text-shadow: 0px 0px 10px aqua;
+      }
+      50% {
+            box-shadow: 0px 0px 10px rgb(162, 0, 255);
+            text-shadow: 0px 0px 10px rgb(162, 0, 255);
+      }
+}
+
+@keyframes backgroundColorAnimation {
+      0%, 100% {
+            background-color: aqua;
+      }
+      50% {
+            background-color: rgb(162, 0, 255);
+      }
+}
+
 /* click event animation starts here  */
 
-#top-animation,#right-animation,#bottom-animation,#left-animation{
-      padding: 2px ;
-      background-color: #d72631;
+#top-animation, #right-animation, #bottom-animation, #left-animation {
+      padding: 3px;
       position: fixed;
-      /* width: 100%; */
       z-index: 2;
       overflow: hidden;
       display: none;
 }
 
-#top-animation{
+#top-animation {
       top: 0;
       left: 0;
-      animation: onClickAnimation1  1s ease-in-out ;
+      animation: onClickAnimation1 1s ease-in-out;
 }
 
-#right-animation{
+#right-animation {
       top: 0;
       right: 0;
       width: 0;
       height: 0vh;
-      background-color:  #a2d5c6;
-      animation: onClickAnimation2 1s ease-in-out ;
+      animation: onClickAnimation2 1s ease-in-out;
 }
 
-#bottom-animation{
+#bottom-animation {
       bottom: 0;
       right: 0;
-      background-color: #5c3c92;
-      animation: onClickAnimation1 1s ease-in-out ;
+      animation: onClickAnimation1 1s ease-in-out;
 }
 
-#left-animation{
+#left-animation {
       width: 0;
       height: 0vh;
       left: 0;
       bottom: 0;
-      background-color: #077b8a;
-      animation: onClickAnimation2 1s ease-in-out ;
+      animation: onClickAnimation2 1s ease-in-out;
 }
 
-@keyframes onClickAnimation1{
-      0%,100%{
+@keyframes onClickAnimation1 {
+      0%, 100% {
+            background-color: aqua;
             width: 0%;
       }
-      50%{
+      50% {
+            background-color: rgb(162, 0, 255);
             width: 100%;
       }
 }
 
-@keyframes onClickAnimation2{
-      0%,100%{ 
+@keyframes onClickAnimation2 {
+      0%, 100% {
+            background-color: aqua;
             height: 0vh;
       }
-      50%{
+      50% {
             height: 100vh;
+            background-color: rgb(162, 0, 255);
       }
 }
 
 /* navbar goes here  */
+
 nav {
       background-color: #121212;
       position: fixed;
@@ -98,6 +118,7 @@ nav {
 }
 
 /* search icon is here  */
+
 #nav-search {
       height: 100%;
       width: 3rem;
@@ -112,56 +133,63 @@ nav {
 } */
 
 /* bars for opening menu  */
-#bars{
-      width:50px;
+
+#bars {
+      width: 2.5rem;
       height: 100%;
       position: relative;
       /* border:1px solid white; */
-      padding: .2rem 0;
+      margin: 0 .3rem 0;
 }
 
-#bars > div{
+#bars>div {
       position: absolute;
       top: 20%;
       left: 10%;
       width: 80%;
-      height: 5px;
+      height: 4px;
       border-radius: 10px;
       background-color: white;
       transition: all 1s ease-in-out;
       transform: translate(0, -50%);
 }
 
-#bars > div:nth-child(2){
+#bars>div:nth-child(2) {
       top: 45%;
 }
 
-#bars > div:nth-child(3){
+#bars>div:nth-child(3) {
       top: 70%;
 }
 
-.position-bars{
+.position-bars {
       top: 50% !important;
       left: 50% !important;
       transform: translate(-50%, -50%) rotate(45deg) !important;
+      animation: backgroundColorAnimation 2s ease-in infinite;
 }
 
-.position-bars3{
+.position-bars3 {
       top: 50% !important;
       left: 50% !important;
       transform: translate(-50%, -50%) rotate(-45deg) !important;
+      animation: backgroundColorAnimation 2s ease-in infinite;
 }
 
 /* other navbar options  */
+
 #nav-options {
       display: flex;
-      flex-wrap:wrap;
+      flex-wrap: wrap;
       flex-direction: column;
       align-items: center;
-      justify-content: space-around;
+      /* justify-content: space-around; */
+      justify-content: center;
       height: 100vh;
       width: 100vw;
       padding: 0 0 4rem;
+      background-color: #121212;
+      background-color: transparent;
       backdrop-filter: blur(10px);
       position: relative;
       z-index: 1;
@@ -170,9 +198,22 @@ nav {
 #nav-options a {
       color: white;
       text-decoration: none;
-      width:100%;
-      text-shadow: 0px 0px 5px black, 0px 1px 5px black, 1px 0px 4px black;
+      width: 100%;
+      /* text-shadow: 0px 0px 5px black, 0px 1px 5px black, 1px 0px 4px black; */
       text-align: center;
+      font-size: 1.5rem;
+      font-variant: small-caps;
+      font-weight: 500;
+      animation: coloredNavbar 2s ease-in infinite;
+}
+
+@keyframes coloredNavbar {
+      0%, 100% {
+            text-shadow: 0px 0px 5px rgb(0, 255, 242), 0px 1px 5px rgb(0, 217, 255), 1px 0px 4px rgb(0, 217, 255);
+      }
+      50% {
+            text-shadow: 0px 0px 5px rgb(0, 119, 255), 0px 1px 5px rgb(0, 174, 255), 1px 0px 4px rgb(0, 132, 255);
+      }
 }
 
 .nav-links {
@@ -180,7 +221,7 @@ nav {
       position: relative;
 }
 
-.nav-links:active{
+.nav-links:active {
       background-color: rgb(255, 255, 255);
       color: black;
       text-shadow: none;
@@ -193,6 +234,7 @@ nav {
       transform: translate(-50%, -50%);
       visibility: hidden;
 }
+
 /* 
 .nav-links:hover {
       color: #121212;
@@ -239,7 +281,7 @@ nav {
       /* padding: 2rem; */
 }
 
-#home-section h2{
+#home-section h2 {
       text-align: center;
       padding: 0 0 1rem;
       font-size: 1.65rem;
@@ -248,11 +290,12 @@ nav {
       opacity: .8;
 }
 
-#about-text{
+#about-text {
       line-height: 2rem;
 }
 
 /* projects section goes here  */
+
 article {
       padding-top: 3rem;
 }
@@ -264,11 +307,12 @@ article section {
 }
 
 article h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       padding: 1rem 2rem;
       border-bottom: 5px solid rgba(255, 255, 255, 0.308);
       margin: 0 .5rem;
       text-align: center;
+      font-family: monospace;
 }
 
 .main-title {
@@ -280,17 +324,17 @@ article h1 {
       padding: 1rem 2rem;
       margin: 0 .8rem;
       transition: all .2s ease-in-out;
+      font-size: 1.3rem ;
 }
 
-.main-title-on-click{
+.main-title-on-click {
       border-radius: 10px;
-      box-shadow: 0px 0px 10px aqua;
-      text-shadow: 0px 0px 10px aqua;
-      transform: scale(1.005);
+      animation: colorfulAnimation 2s ease-in-out infinite;
+      transform: scale(1.009);
 }
 
-.plus-container-on-click{
-      background-color: rgb(0, 255, 255) !important;
+.plus-container-on-click {
+      animation: colorfulAnimation 2s ease-in-out infinite, backgroundColorAnimation 2s ease-in-out infinite;
 }
 
 .plus-container {
@@ -315,7 +359,7 @@ article h1 {
       border-radius: 10px;
 }
 
-.plus-down{
+.plus-down {
       transition: all 1s ease-in-out;
       transform: translate(-50%, -50%) rotate(90deg);
 }
@@ -331,7 +375,7 @@ article h1 {
       margin: 0 1.5rem;
 }
 
-.project-container  a {
+.project-container a {
       width: 100%;
       color: white;
       text-decoration: none;
@@ -359,4 +403,18 @@ article h1 {
 
 footer {
       padding: 4rem;
+}
+
+#social-links{
+      border: 1px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+#social-links a{
+      color: white;
+      border: 1px solid white;
+      margin: 1rem;
+      font-size: 1.2rem;
 }
