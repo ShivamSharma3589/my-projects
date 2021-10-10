@@ -4,8 +4,8 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" media="(min-width:601px)" href="style.css">
       <link rel="stylesheet" media="(max-width:600px)" href="phone.css">
       <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
@@ -14,7 +14,25 @@
 
 <body id="body">
 
-      <!-- click event theme starts here  -->
+      <!-- loading screen will be here  -->
+      <div id="loader">
+            
+            <!--side bars -->
+            <div class="sides" id="top-side"></div>
+            <div class="sides" id="right-side"></div>
+            <div class="sides" id="bottom-side"></div>
+            <div class="sides" id="left-side"></div>
+            
+            <!--loading animation-->
+            <div id="loader-contents">
+                  <div id="loader-heading">My Projects</div>
+                  <div id="loader-animation">
+                        <div id="loader-ball"></div>
+                  </div>
+            </div>
+      </div>
+
+      <!-- click event animation theme starts here  -->
       <div class="trbl-animation" id="right-animation"></div>
       <div class="trbl-animation" id="left-animation"></div>
       <div class="trbl-animation" id="top-animation"></div>
@@ -159,7 +177,7 @@
                               class="fa fa-linkedin-square"></i></a>
             </div>
             <div>
-                  &copy;copyright
+                  &copy;copyright   
             </div>
       </footer>
 </body>
