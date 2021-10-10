@@ -113,6 +113,16 @@ window.addEventListener('load', ()=>{
             navoptions.style.display = 'none';
             body.style.overflow = 'scroll';
       }
+      
+    //   it will slide the loading animation to the top 
+      setTimeout(()=>{
+          document.getElementById('loader').style.top = '-100%';
+      }, 2500);
+      
+    //   it will hide the loader 
+      setTimeout(()=>{
+            document.getElementById('loader').style.display = 'none';
+      }, 3000);
 });
 
 // click animation starts here for window
