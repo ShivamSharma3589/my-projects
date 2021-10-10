@@ -39,6 +39,87 @@ img {
       }
 }
 
+/* loader's css starts here  */
+#loader{
+      background-color: black;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      transition: 2s ease-in-out;
+}
+
+.sides{
+      background-color: red;
+      padding: 4px;
+      position: fixed;
+      overflow: hidden;
+      animation: colorfulAnimation 1s ease-in-out infinite alternate-reverse, backgroundColorAnimation 1s ease-in-out infinite alternate-reverse;
+}
+
+#top-side{
+      top: 0;
+      left: 0;
+      width: 100%;
+}
+#right-side{
+      top: 0;
+      right: 0;
+      height: 100vh;
+}
+#bottom-side{
+      bottom: 0;
+      right: 0;
+      width: 100%;
+}
+#left-side{
+      bottom: 0;
+      left: 0;
+      height: 100vh;
+}
+
+/* for loader loading ball animation  */
+#loader-contents{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+}
+
+#loader-animation{
+      width: 3rem;
+      height: 3rem;
+      margin: 2rem;
+      position: relative;
+}
+
+#loader-ball{
+      position: absolute;
+      border: 5px solid white;
+      border-color: green transparent transparent transparent;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      animation: loadingBall 2s linear infinite;
+}
+
+@keyframes loadingBall{
+      0% {
+            border-top-color: aqua;
+            transform: rotate(0deg);
+      }
+      50% {
+            border-top-color: rgb(162, 0, 255);
+      }
+      100% {
+            border-top-color: rgb(255, 0, 43);
+            transform: rotate(360deg);
+      }
+}
+
 /* click event animation starts here  */
 
 #top-animation, #right-animation, #bottom-animation, #left-animation {
@@ -135,7 +216,7 @@ nav {
 /* bars for opening menu  */
 
 #bars {
-      width: 2.5rem;
+      width: 2rem;
       height: 100%;
       position: relative;
       /* border:1px solid white; */
@@ -144,10 +225,10 @@ nav {
 
 #bars>div {
       position: absolute;
-      top: 20%;
+      top: 25%;
       left: 10%;
       width: 80%;
-      height: 4px;
+      height: 3px;
       border-radius: 10px;
       background-color: white;
       transition: all 1s ease-in-out;
@@ -159,7 +240,7 @@ nav {
 }
 
 #bars>div:nth-child(3) {
-      top: 70%;
+      top: 65%;
 }
 
 .position-bars {
@@ -183,7 +264,6 @@ nav {
       flex-wrap: wrap;
       flex-direction: column;
       align-items: center;
-      /* justify-content: space-around; */
       justify-content: center;
       height: 100vh;
       width: 100vw;
@@ -403,18 +483,22 @@ article h1 {
 
 footer {
       padding: 4rem;
+      text-align: center;
 }
 
 #social-links{
-      border: 1px solid white;
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
 }
 
 #social-links a{
       color: white;
-      border: 1px solid white;
       margin: 1rem;
-      font-size: 1.2rem;
+      font-size: 2.2rem;
+}
+
+#social-links a:hover{
+    color: aqua;
 }
